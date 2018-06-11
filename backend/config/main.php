@@ -7,15 +7,18 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-backend',
+    'id' => 'jetisu-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    'name' => 'Жетысу Капитал - Админ панель',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'ru-RU',
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' => '/admin',
+            'baseUrl' => '',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -24,7 +27,7 @@ return [
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'name' => 'jetisu-backend',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

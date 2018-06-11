@@ -12,7 +12,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'name' => 'Жетысу Капитал',
-    'language' => 'ru',
+    'language' => 'ru-RU',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',

@@ -3,6 +3,7 @@
 namespace frontend\controllers;
 
 
+use backend\models\Info;
 use yii\web\Controller;
 
 class StatementController extends Controller
@@ -14,6 +15,9 @@ class StatementController extends Controller
 
     public function actionList()
     {
-        return $this->render('list');
+        $docs = Info::find()->where(['type' => Info::STATEMENT])->orderBy(['id' => 'DESC'])->all();
+        return $this->render('list', [
+            'docs' => $docs
+        ]);
     }
 }

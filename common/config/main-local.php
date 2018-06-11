@@ -3,9 +3,9 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=srv-pleskdb23.ps.kz:3306;dbname=osultak1_jetisu',
-            'username' => 'osult_jetisu',
-            'password' => 'i5T@l1n3',
+            'dsn' => 'mysql:host=localhost;dbname=jetisu',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ],
         'mailer' => [

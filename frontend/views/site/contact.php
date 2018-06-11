@@ -1,5 +1,7 @@
 <?php
 
+use backend\models\Contact;
+
 /* @var $this yii\web\View */
 
 $this->title = 'Контакты';
@@ -8,7 +10,7 @@ $this->title = 'Контакты';
     <div class="descriptor">
         <div class="container">
             <div class="col-lg-10">
-                <!--                <h2>--><?//= $this->title; ?><!--</h2>-->
+                <!--                <h2>--><?php /* echo $this->title; */ ?><!--</h2>-->
             </div>
         </div>
     </div>
@@ -26,13 +28,13 @@ $this->title = 'Контакты';
 
             <div class="contact__info">
                 <h3 class="contact__heading"><i class="fas fa-phone-square contact__info-icon"></i> Телефон:</h3>
-                <a href="#" class="contact__link">8 (701) 777 8888</a>
+                <a href="#" class="contact__link"><?= Contact::getPhone() ?></a>
 
                 <h3 class="contact__heading"><i class="fas fa-envelope contact__info-icon"></i> Email:</h3>
-                <a href="#" class="contact__link">info@zhetysu-capital.kz</a>
+                <a href="#" class="contact__link"><?= Contact::getEmail() ?></a>
 
                 <h3 class="contact__heading"><i class="fas fa-map-marker contact__info-icon"></i> Адрес:</h3>
-                <a href="#" class="contact__link">г. Алматы, улица Достык 80</a>
+                <a href="#" class="contact__link"><?= Contact::getAddress() ?></a>
             </div>
 
         </div>

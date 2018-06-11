@@ -8,7 +8,7 @@ $this->title = 'Для акционеров';
     <div class="descriptor">
         <div class="container">
             <div class="col-lg-10">
-<!--                <h2>--><?//= $this->title; ?><!--</h2>-->
+<!--                <h2>--><?php /* echo $this->title; */ ?><!--</h2>-->
             </div>
         </div>
     </div>

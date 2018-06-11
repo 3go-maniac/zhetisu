@@ -6,6 +6,7 @@
 use yii\helpers\Html;
 use frontend\assets\AppAsset;
 use yii\helpers\Url;
+use backend\models\Contact;
 
 AppAsset::register($this);
 ?>
@@ -96,9 +97,9 @@ AppAsset::register($this);
                 <h5 class="footer-column__h5">Контакты</h5>
                 <hr class="footer-column__hr">
                 <ul class="footer-column__list">
-                    <li class="footer-column__list-item"><a class="footer-column__anchor" href="#">г. Алматы, улица Достык 80</a></li>
-                    <li class="footer-column__list-item"><a class="footer-column__anchor" href="#">info@zhetysu-capital.kz</a></li>
-                    <li class="footer-column__list-item"><a class="footer-column__anchor" href="#">8 (701) 777 8888</a></li>
+                    <li class="footer-column__list-item"><a class="footer-column__anchor" href="#"><?= Contact::getAddress() ?></a></li>
+                    <li class="footer-column__list-item"><a class="footer-column__anchor" href="#"><?= Contact::getEmail() ?></a></li>
+                    <li class="footer-column__list-item"><a class="footer-column__anchor" href="#"><?= Contact::getPhone() ?></a></li>
                 </ul>
             </div>
         </div>

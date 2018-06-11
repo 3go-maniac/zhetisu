@@ -29,24 +29,16 @@ $this->title = '';
             </thead>
 
             <tbody>
+            <?php $i = 1; ?>
+            <?php foreach ($docs as $doc): ?>
                 <tr>
-                    <td>1</td>
-                    <td><a href="#">Годовая финансовая отчетность за 2017 год, с аудиторским отчетом</a></td>
-                    <td>21.03.2018</td>
+                    <td><?= $i ?></td>
+                    <td><a href="#"><?= $doc->title ?></a></td>
+                    <td><?= $doc->created_at ?></td>
                     <td><a href="#"><i class="fas fa-download"></i></a></td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td><a href="#">Годовая финансовая отчетность за 2017 год, с аудиторским отчетом</a></td>
-                    <td>21.03.2018</td>
-                    <td><a href="#"><i class="fas fa-download"></i></a></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td><a href="#">Годовая финансовая отчетность за 2017 год, с аудиторским отчетом</a></td>
-                    <td>21.03.2018</td>
-                    <td><a href="#"><i class="fas fa-download"></i></a></td>
-                </tr>
+            <?php $i++; ?>
+            <?php endforeach;?>
             </tbody>
         </table>
     </div>
