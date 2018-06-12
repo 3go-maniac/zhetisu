@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 
 use backend\models\Info;
+use Yii;
 use yii\web\Controller;
 
 class InformationController extends Controller
@@ -27,5 +28,22 @@ class InformationController extends Controller
         return $this->render('for-shareholders', [
             'docs' => $docs
         ]);
+    }
+
+    public function actionView($id)
+    {
+        $doc = Info::findOne($id);
+        return $this->render('view', [
+            'doc' => $doc
+        ]);
+    }
+
+    public function actionDownloadFile($id)
+    {
+        $filepath = Yii::getAlias('@webroot') . Info::findOne($id)->filepath;
+
+        if (file_exists($filepath)) {
+            return Yii::$app->response->sendFile($filepath);
+        }
     }
 }

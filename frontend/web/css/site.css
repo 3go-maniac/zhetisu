@@ -581,3 +581,43 @@ body {
     border-color: #204d74;
 }
 /* contact ends */
+
+/* info */
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.info-header {
+    padding: 20px 30px;
+    position: relative;
+    text-align: center;
+    background-color: #ddd;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+.info-date {
+    top: 25px;
+    left: 30px;
+    position: absolute;
+}
+.info-download-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: block;
+}
+.info-body {
+    padding: 20px 30px;
+    text-align: justify;
+    background-color: #eee;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+.info-footer {
+
+}
+
+/* ----- */

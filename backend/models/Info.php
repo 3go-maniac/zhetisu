@@ -13,9 +13,12 @@ use Yii;
  * @property string $type
  * @property int $status
  * @property string $created_at
+ * @property string filepath
  */
 class Info extends \yii\db\ActiveRecord
 {
+    public $file;
+
     const FOR_INVESTORS = 0;
     const FOR_SHAREHOLDERS = 1;
     const STATEMENT = 2;
@@ -39,6 +42,8 @@ class Info extends \yii\db\ActiveRecord
             [['text'], 'string'],
             [['title'], 'string', 'max' => 500],
             [['type'], 'string', 'max' => 255],
+            [['filepath'], 'string'],
+            [['file'], 'file', 'extensions' => 'doc, pdf, docx'],
         ];
     }
 
@@ -54,6 +59,8 @@ class Info extends \yii\db\ActiveRecord
             'type' => 'Тип',
             'status' => 'Статус',
             'created_at' => 'Дата создания',
+            'filepath' => 'Путь к файлу',
+            'file' => 'Файл',
         ];
     }
 
@@ -74,5 +81,13 @@ class Info extends \yii\db\ActiveRecord
     {
         $this->created_at = time();
         return parent::beforeSave($insert);
+    }
+
+    public function upload()
+    {
+        $this->filepath = '/uploads/info/' . time() . '.' . $this->file->extension;
+        $this->file->saveAs(Yii::getAlias('@frontend') . '/web/' . $this->filepath);
+        $this->file = null;
+        return true;
     }
 }

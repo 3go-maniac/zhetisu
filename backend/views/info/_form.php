@@ -29,6 +29,8 @@ use mihaildev\ckeditor\CKEditor;
             Info::STATEMENT => 'Финансовая отчетность',
     ]) ?>
 
+    <?= $form->field($model, 'file')->fileInput() ?>
+
     <?= $form->field($model, 'status')->checkbox() ?>
 
     <div class="form-group">

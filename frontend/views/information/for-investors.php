@@ -2,6 +2,8 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
+
 $this->title = 'Для инвесторов';
 ?>
 <header class="header for-invest">
@@ -32,9 +34,9 @@ $this->title = 'Для инвесторов';
             <?php foreach ($docs as $doc): ?>
                 <tr>
                     <td><?= $i ?></td>
-                    <td><a href="#"><?= $doc->title ?></a></td>
+                    <td><a href="<?= Url::to(['information/view', 'id' => $doc->id]) ?>"><?= $doc->title ?></a></td>
                     <td><?= $doc->created_at ?></td>
-                    <td><a href="#"><i class="fas fa-download"></i></a></td>
+                    <td><a href="<?= Url::to(['information/download-file', 'id' => $doc->id]) ?>"><i class="fas fa-download"></i></a></td>
                 </tr>
                 <?php $i++; ?>
             <?php endforeach;?>
